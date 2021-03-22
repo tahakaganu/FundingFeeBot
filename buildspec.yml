@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+        python: 3.8
+  build:
+    commands:
+      - sam package --template-file template.yml --s3-bucket codepipeline-us-east-1-146185054339 --output-template-file packaged-template.yml
+artifacts:
+  files:
+    - packaged-template.yml
